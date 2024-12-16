@@ -46,6 +46,7 @@ dependencies {
     implementation(project(":settings:settings-presentation"))
     implementation(project(":settings:settings-domain"))
     implementation(project(":settings:settings-data"))
+    implementation(project(":home"))
 
     //Koin
     implementation (libs.koin.androidx.compose)

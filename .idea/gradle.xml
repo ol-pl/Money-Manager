@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/core-presentation" />
             <option value="$PROJECT_DIR$/core/core-utils" />
+            <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/settings" />
             <option value="$PROJECT_DIR$/settings/settings-data" />
             <option value="$PROJECT_DIR$/settings/settings-domain" />
