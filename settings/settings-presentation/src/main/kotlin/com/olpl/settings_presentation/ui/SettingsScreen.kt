@@ -1,6 +1,5 @@
 package com.olpl.settings_presentation.ui
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,7 +9,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -130,7 +128,7 @@ private fun LazyListScope.appVersionCardItem(settingsViewModel: SettingsViewMode
 private fun LazyListScope.tittle(title: StringId) {
     item {
         TextImpl(
-            textColor = MaterialTheme.colorScheme.primary,
+            textColor = MaterialTheme.colorScheme.onTertiary,
             modifier = Modifier.fillMaxWidth(),
             text = title,
             style = MaterialTheme.typography.titleLarge,

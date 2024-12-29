@@ -13,6 +13,6 @@ internal fun DialogTittle(
     TextImpl(
         text = text,
         style = MaterialTheme.typography.titleLarge,
-        textColor = colorScheme.primary
+        textColor = colorScheme.onTertiary
     )
 }

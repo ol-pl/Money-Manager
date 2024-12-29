@@ -73,7 +73,7 @@ class SettingsViewModel(
     private fun setColorMode(colorMode: ColorMode) {
         settingsUseCase.setColorMode(colorMode.name).onEach { response ->
             when (response) {
-                is Responses.Error<Unit> -> showInfoBar(text = response.message)
+                is Responses.Error<Unit> -> showInfoBar(OnPrimary = response.message)
                 is Responses.Loading<Unit> -> Unit
                 is Responses.Success<Unit> -> showInfoBar(R.string.successfully_update)
             }
@@ -83,7 +83,7 @@ class SettingsViewModel(
     private fun setColorPalette(paletteVariants: PaletteVariants) {
         settingsUseCase.setColorPalette(paletteVariants.id).onEach { response ->
             when (response) {
-                is Responses.Error<Unit> -> showInfoBar(text = response.message)
+                is Responses.Error<Unit> -> showInfoBar(OnPrimary = response.message)
                 is Responses.Loading<Unit> -> Unit
                 is Responses.Success<Unit> -> showInfoBar(R.string.successfully_update)
             }
@@ -93,7 +93,7 @@ class SettingsViewModel(
     private fun setFontFamilyVariant(fontFamilyVariants: FontFamilyVariants) {
         settingsUseCase.setFontVariant(fontFamilyVariants.id).onEach { response ->
             when (response) {
-                is Responses.Error<Unit> -> showInfoBar(text = response.message)
+                is Responses.Error<Unit> -> showInfoBar(OnPrimary = response.message)
                 is Responses.Loading<Unit> -> Unit
                 is Responses.Success<Unit> -> showInfoBar(R.string.successfully_update)
             }

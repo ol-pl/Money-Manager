@@ -1,8 +1,6 @@
 package com.olpl.settings_presentation.ui.dialog_screens
 
-import android.util.Log
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.lazy.LazyItemScope
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -30,7 +28,7 @@ internal fun FontFamilyVariantsDialog() {
         viewModelStoreOwner = viewModelStoreOwner
     )
     SettingsDialogScreenImpl(
-        tittle = R.string.font,
+        title = R.string.font,
         onBackAction = {
             settingsViewModel.onEvent(SettingsEvents.GoBack)
         },

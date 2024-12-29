@@ -38,13 +38,13 @@ abstract class ViewModelExp<E : Events, UiE : UiEvents> : ViewModel() {
     }
 
     protected fun showInfoBar(
-        text: StringId,
+        OnPrimary: StringId,
         timeInSeconds: InfoBarTimeLength = InfoBarTimeLength.Short,
         actionText: StringId? = null,
         onAction: () -> Unit = {}
     ) {
         val newInfoBarMessage = InfoBarMessage(
-            textStringResId = text,
+            textStringResId = OnPrimary,
             actionStringResId = actionText,
             displayTimeSeconds = timeInSeconds.timeInSeconds,
             onAction = onAction

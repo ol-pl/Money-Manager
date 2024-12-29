@@ -5,9 +5,9 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonColors
 import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,6 +23,12 @@ fun RadioButtonImpl(
     selected: Boolean,
     enabledWhenSelected: Boolean = false,
     mutableInteractionSource: MutableInteractionSource,
+    colors: RadioButtonColors = RadioButtonDefaults.colors(
+        selectedColor = colorScheme.onTertiary,
+        unselectedColor = colorScheme.onTertiary,
+        disabledSelectedColor = colorScheme.onTertiary,
+        disabledUnselectedColor = colorScheme.onTertiary
+    ),
     onClick: () -> Unit
 ) {
     RadioButtonImpl(
@@ -30,6 +36,7 @@ fun RadioButtonImpl(
         selected = selected,
         enabledWhenSelected = enabledWhenSelected,
         mutableInteractionSource = mutableInteractionSource,
+        colors = colors,
         onClick = onClick
     )
 }
@@ -40,6 +47,12 @@ fun RadioButtonImpl(
     selected: Boolean,
     enabledWhenSelected: Boolean = false,
     mutableInteractionSource: MutableInteractionSource,
+    colors: RadioButtonColors = RadioButtonDefaults.colors(
+        selectedColor = colorScheme.onTertiary,
+        unselectedColor = colorScheme.onTertiary,
+        disabledSelectedColor = colorScheme.onTertiary,
+        disabledUnselectedColor = colorScheme.onTertiary
+    ),
     onClick: () -> Unit
 ) {
     val paddings = LocalPaddings.current
@@ -60,11 +73,12 @@ fun RadioButtonImpl(
             selected = selected,
             enabledWhenSelected = enabledWhenSelected,
             interactionSource = mutableInteractionSource,
-            onClick = onClick
+            onClick = onClick,
+            colors = colors
         )
         TextImpl(
             text = text,
-            textColor = colorScheme.primary
+            textColor = colorScheme.onTertiary
         )
     }
 }
@@ -74,6 +88,7 @@ private fun CustomRadioButton(
     selected: Boolean,
     enabledWhenSelected: Boolean = false,
     interactionSource: MutableInteractionSource,
+    colors: RadioButtonColors,
     onClick: () -> Unit
 ) {
     RadioButton(
@@ -82,11 +97,6 @@ private fun CustomRadioButton(
         selected = selected,
         onClick = onClick,
         enabled = selected.not() || (enabledWhenSelected && selected),
-        colors = RadioButtonDefaults.colors(
-            selectedColor = colorScheme.primary,
-            unselectedColor = colorScheme.primary,
-            disabledSelectedColor = colorScheme.primary,
-            disabledUnselectedColor = colorScheme.primary
-        )
+        colors = colors
     )
 }

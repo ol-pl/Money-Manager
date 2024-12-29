@@ -41,7 +41,8 @@ fun DialogScreen(
     BackHandler(onBack = onBackAction)
 
     Surface(
-        color = MaterialTheme.colorScheme.secondary,
+        color = MaterialTheme.colorScheme.tertiary,
+        contentColor = MaterialTheme.colorScheme.onTertiary,
         modifier = Modifier.heightIn(max = maxHeight) then modifier ,
         shape = MaterialTheme.shapes.medium,
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary),

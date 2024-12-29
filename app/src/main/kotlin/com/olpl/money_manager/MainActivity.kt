@@ -72,9 +72,8 @@ class MainActivity : ComponentActivity() {
                         NavHost(
                             modifier = Modifier.padding(bottom = paddings.calculateBottomPadding()),
                             navController = mainNavController,
-                            startDestination = AppDestinations.HomeGraph
+                            startDestination = AppDestinations.AccountGraph
                         ) {
-
                             homeGraph()
                             composable<AppDestinations.DashboardGraph> { }
                             settingsGraph()

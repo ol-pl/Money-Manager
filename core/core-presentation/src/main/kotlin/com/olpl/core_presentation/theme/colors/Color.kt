@@ -19,3 +19,13 @@ internal val P2_DarkIndigo_Dark = Color(0xFF1C1C32)
 internal val P2_DeepPurpleGray_Dark = Color(0xFF5D5D7F)
 internal val P2_CoolGray_Dark = Color(0xFF7C7D82)
 internal val P2_LightGray_Dark = Color(0xFFAAAAAA)
+
+internal val P3_BlackGraphite_Light = Color(0xFF303030)
+internal val P3_DeepBlackGraphite_Light = Color(0xFF3D3D3D)
+internal val P3_CoolWhite_Light = Color(0xFFFAFAFA)
+internal val P3_GoldOre_Light = Color(0xFFFFDEAA)
+
+internal val P3_BlackGraphite_Dark = Color(0xFF111111)
+internal val P3_DeepBlackGraphite_Dark = Color(0xFF303030)
+internal val P3_CoolWhite_Dark = Color(0xFFF4F4F4)
+internal val P3_GoldOre_Dark = Color(0xFFFDC974)

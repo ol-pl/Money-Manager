@@ -57,7 +57,7 @@ internal fun SettingsCardImpl(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 rightText()
-                if(showIcon) {
+                if (showIcon) {
                     Spacer(modifier = Modifier.padding(paddings.extraSmall))
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowForward,

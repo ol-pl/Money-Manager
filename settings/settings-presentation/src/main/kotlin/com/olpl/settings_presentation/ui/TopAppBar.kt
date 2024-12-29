@@ -26,7 +26,7 @@ internal fun SettingsTopAppBar() {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                     contentDescription = "settings back button",
-                    tint = MaterialTheme.colorScheme.primary
+                    tint = MaterialTheme.colorScheme.onTertiary
                 )
             }
         }

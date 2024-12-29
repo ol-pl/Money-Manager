@@ -1,7 +1,6 @@
 package com.olpl.settings_presentation.ui.dialog_screens
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.lazy.LazyItemScope
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -29,7 +28,7 @@ internal fun ColorsDialog() {
         viewModelStoreOwner = viewModelStoreOwner
     )
     SettingsDialogScreenImpl(
-        tittle = R.string.colors,
+        title = R.string.colors,
         onBackAction = {
             settingsViewModel.onEvent(SettingsEvents.GoBack)
         },
