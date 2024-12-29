@@ -1,11 +1,11 @@
-package com.olpl.core_presentation.viewmodel
+package com.olpl.core_presentation.viewmodel.util
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.olpl.core_presentation.viewmodel.events.Events
-import com.olpl.core_presentation.viewmodel.events.UiEvents
+import com.olpl.core_presentation.viewmodel.util.events.Events
+import com.olpl.core_presentation.viewmodel.util.events.UiEvents
 import com.olpl.utils.StringId
 import com.radusalagean.infobarcompose.InfoBarMessage
 import kotlinx.coroutines.CoroutineScope

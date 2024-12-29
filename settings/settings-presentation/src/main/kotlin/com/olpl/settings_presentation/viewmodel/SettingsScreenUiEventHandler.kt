@@ -1,4 +1,4 @@
-package com.olpl.settings_presentation.ui
+package com.olpl.settings_presentation.viewmodel
 
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.ViewModelStoreOwner
@@ -6,9 +6,8 @@ import com.olpl.core_presentation.components.UiEventsHandler
 import com.olpl.core_presentation.providers.LocalCurrentNavigator
 import com.olpl.core_presentation.providers.util.currentNotNull
 import com.olpl.core_presentation.util.Qualifiers
+import com.olpl.settings_presentation.navigation.util.SettingsDestinations
 import com.olpl.settings_presentation.navigation.util.SettingsNavigator
-import com.olpl.settings_presentation.viewmodel.SettingsViewModel
-import com.olpl.settings_presentation.viewmodel.events.SettingsEvents
 import com.olpl.settings_presentation.viewmodel.events.SettingsUiEvents
 import org.koin.androidx.compose.koinViewModel
 import org.koin.compose.koinInject
@@ -28,14 +27,14 @@ internal fun SettingsScreenUiEventHandler() {
     val currentNavHostController = LocalCurrentNavigator.currentNotNull()
     val navigator = SettingsNavigator(currentNavHostController)
 
-    UiEventsHandler<SettingsEvents, SettingsUiEvents>(
-        viewModel = settingsViewModel
-    ) { uiEvent ->
+    UiEventsHandler(viewModel = settingsViewModel) { uiEvent ->
         when (uiEvent) {
             SettingsUiEvents.GoBack -> navigator.navigateUp()
-            SettingsUiEvents.OpenColorModeDialog -> navigator.navigateToColorModeDialog()
-            SettingsUiEvents.OpenColorsDialog -> navigator.navigateToColorsDialog()
-            SettingsUiEvents.OpenFontFamilyVariantDialog -> navigator.navigateToFontFamilyVariantsDialog()
+            SettingsUiEvents.OpenColorModeDialog -> navigator.navigateTo(SettingsDestinations.ColorModeDialog)
+            SettingsUiEvents.OpenColorsDialog -> navigator.navigateTo(SettingsDestinations.ColorsDialog)
+            SettingsUiEvents.OpenFontFamilyVariantDialog -> navigator.navigateTo(
+                SettingsDestinations.FontFamilyVariantDialog
+            )
         }
     }
 }

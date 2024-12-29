@@ -1,6 +1,6 @@
 package com.olpl.settings_presentation.viewmodel.events
 
-import com.olpl.core_presentation.viewmodel.events.UiEvents
+import com.olpl.core_presentation.viewmodel.util.events.UiEvents
 
 sealed interface SettingsUiEvents : UiEvents {
     data object GoBack : SettingsUiEvents

@@ -4,7 +4,7 @@ import com.olpl.core_presentation.navigation.Destination
 import kotlinx.serialization.Serializable
 
 @Serializable
-sealed class SettingsDestinations : Destination {
+internal sealed class SettingsDestinations : Destination {
     @Serializable
     data object SettingsScreen : SettingsDestinations()
 

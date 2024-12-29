@@ -2,9 +2,9 @@ package com.olpl.core_presentation.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import com.olpl.core_presentation.viewmodel.ViewModelExp
-import com.olpl.core_presentation.viewmodel.events.Events
-import com.olpl.core_presentation.viewmodel.events.UiEvents
+import com.olpl.core_presentation.viewmodel.util.ViewModelExp
+import com.olpl.core_presentation.viewmodel.util.events.Events
+import com.olpl.core_presentation.viewmodel.util.events.UiEvents
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable

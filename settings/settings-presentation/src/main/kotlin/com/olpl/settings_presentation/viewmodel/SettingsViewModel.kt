@@ -3,7 +3,7 @@ package com.olpl.settings_presentation.viewmodel
 import com.olpl.core_presentation.theme.util.ColorMode
 import com.olpl.core_presentation.theme.util.FontFamilyVariants
 import com.olpl.core_presentation.theme.util.PaletteVariants
-import com.olpl.core_presentation.viewmodel.ViewModelExp
+import com.olpl.core_presentation.viewmodel.util.ViewModelExp
 import com.olpl.settings_domain.usecase.SettingsUseCase
 import com.olpl.settings_presentation.R
 import com.olpl.settings_presentation.viewmodel.events.SettingsEvents

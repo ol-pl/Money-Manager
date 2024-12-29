@@ -43,6 +43,7 @@ android {
 dependencies {
     //Modules
     implementation(project(":core:core-presentation"))
+    implementation(project(":core:core-utils"))
     implementation(project(":settings:settings-presentation"))
     implementation(project(":settings:settings-domain"))
     implementation(project(":settings:settings-data"))
