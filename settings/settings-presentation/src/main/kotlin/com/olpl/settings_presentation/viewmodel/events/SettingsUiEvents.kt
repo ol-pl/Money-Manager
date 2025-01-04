@@ -7,4 +7,5 @@ sealed interface SettingsUiEvents : UiEvents {
     data object OpenColorModeDialog : SettingsUiEvents
     data object OpenColorsDialog : SettingsUiEvents
     data object OpenFontFamilyVariantDialog : SettingsUiEvents
+    data object OpenHomeScreen : SettingsUiEvents
 }

@@ -13,6 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.olpl.core_presentation.components.BaseContainer
 import com.olpl.core_presentation.navigation.AppDestinations
+import com.olpl.core_presentation.navigation.composableImpl
 import com.olpl.core_presentation.providers.LocalMainNavigator
 import com.olpl.core_presentation.providers.util.currentNotNull
 import com.olpl.core_presentation.theme.MoneyManagerTheme
@@ -46,7 +47,6 @@ class MainActivity : ComponentActivity() {
                 viewModelStoreOwner = viewModelStoreOwner
             )
 
-
             MoneyManagerTheme(
                 colorModeState = settingsViewModel.colorMode,
                 paletteVariantsState = settingsViewModel.colorPalette,
@@ -75,7 +75,7 @@ class MainActivity : ComponentActivity() {
                             startDestination = AppDestinations.AccountGraph
                         ) {
                             homeGraph()
-                            composable<AppDestinations.DashboardGraph> { }
+                            composableImpl<AppDestinations.DashboardGraph> { }
                             settingsGraph()
                         }
                     }

@@ -10,7 +10,7 @@ sealed interface SettingsEvents : Events {
     data class SetColorMode(val colorMode: ColorMode) : SettingsEvents
     data class SetFontFamilyVariant(val fontFamilyVariants: FontFamilyVariants) : SettingsEvents
     data object GoBack : SettingsEvents
-
+    data object GoToHome : SettingsEvents
     data object OnColorModeCardClick : SettingsEvents
     data object OnColorsCardClick : SettingsEvents
     data object OnFontCardClick : SettingsEvents

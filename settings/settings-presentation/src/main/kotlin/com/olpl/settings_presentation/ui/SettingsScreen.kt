@@ -41,6 +41,7 @@ internal fun SettingsScreen(paddingValues: PaddingValues) {
     val settingsViewModel = koinViewModel<SettingsViewModel>(
         viewModelStoreOwner = viewModelStoreOwner
     )
+
     val paddings = LocalPaddings.current
 
     LazyColumn(
@@ -83,7 +84,6 @@ private fun LazyListScope.colorTheme(settingsViewModel: SettingsViewModel) {
 private fun LazyListScope.colorMode(settingsViewModel: SettingsViewModel) {
     item {
         val colorMode = settingsViewModel.colorMode.collectAsState()
-        Log.wtf("hRae", "colorMode: ${colorMode.value}")
         SettingsCardImpl(
             title = R.string.color_mode,
             onClick = {

@@ -6,6 +6,7 @@ import com.olpl.core_presentation.components.BaseScreen
 import com.olpl.core_presentation.util.Qualifiers
 import com.olpl.settings_presentation.viewmodel.SettingsScreenUiEventHandler
 import com.olpl.settings_presentation.viewmodel.SettingsViewModel
+import com.olpl.settings_presentation.viewmodel.events.SettingsEvents
 import org.koin.androidx.compose.koinViewModel
 import org.koin.compose.koinInject
 import org.koin.core.qualifier.Qualifier
@@ -25,10 +26,16 @@ internal fun SettingsScreenRoot() {
     )
     BaseScreen(
         infoBarMessage = settingsViewModel.infoBarState,
-        onInfoBarDismiss = {},
-        onBackAction = {},
+        onInfoBarDismiss = {
+            settingsViewModel.hideInfoBar()
+        },
+        onBackAction = {
+            settingsViewModel.onEvent(SettingsEvents.GoToHome)
+        },
         topBar = {
-            SettingsTopAppBar()
+            SettingsTopAppBar {
+                settingsViewModel.onEvent(SettingsEvents.GoToHome)
+            }
         }
     ) { paddings ->
         SettingsScreen(paddings)

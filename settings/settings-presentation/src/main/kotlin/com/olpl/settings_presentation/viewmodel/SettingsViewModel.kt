@@ -1,6 +1,5 @@
 package com.olpl.settings_presentation.viewmodel
 
-import android.util.Log
 import com.olpl.core_presentation.theme.util.ColorMode
 import com.olpl.core_presentation.theme.util.FontFamilyVariants
 import com.olpl.core_presentation.theme.util.PaletteVariants
@@ -41,33 +40,14 @@ class SettingsViewModel(
 
     override fun onEvent(event: SettingsEvents) {
         when (event) {
-            is SettingsEvents.SetColorMode -> {
-                setColorMode(event.colorMode)
-            }
-
-            is SettingsEvents.SetColorPalette -> {
-                setColorPalette(event.paletteVariant)
-            }
-
-            is SettingsEvents.SetFontFamilyVariant -> {
-                setFontFamilyVariant(event.fontFamilyVariants)
-            }
-
-            SettingsEvents.GoBack -> {
-                sendUiEvent(SettingsUiEvents.GoBack)
-            }
-
-            SettingsEvents.OnColorModeCardClick -> {
-                sendUiEvent(SettingsUiEvents.OpenColorModeDialog)
-            }
-
-            SettingsEvents.OnColorsCardClick -> {
-                sendUiEvent(SettingsUiEvents.OpenColorsDialog)
-            }
-
-            SettingsEvents.OnFontCardClick -> {
-                sendUiEvent(SettingsUiEvents.OpenFontFamilyVariantDialog)
-            }
+            is SettingsEvents.SetColorMode -> setColorMode(event.colorMode)
+            is SettingsEvents.SetColorPalette -> setColorPalette(event.paletteVariant)
+            is SettingsEvents.SetFontFamilyVariant -> setFontFamilyVariant(event.fontFamilyVariants)
+            SettingsEvents.GoBack -> sendUiEvent(SettingsUiEvents.GoBack)
+            SettingsEvents.OnColorModeCardClick -> sendUiEvent(SettingsUiEvents.OpenColorModeDialog)
+            SettingsEvents.OnColorsCardClick -> sendUiEvent(SettingsUiEvents.OpenColorsDialog)
+            SettingsEvents.OnFontCardClick -> sendUiEvent(SettingsUiEvents.OpenFontFamilyVariantDialog)
+            SettingsEvents.GoToHome -> sendUiEvent(SettingsUiEvents.OpenHomeScreen)
         }
     }
 

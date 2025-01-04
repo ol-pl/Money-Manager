@@ -13,12 +13,14 @@ import com.olpl.settings_presentation.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun SettingsTopAppBar() {
+internal fun SettingsTopAppBar(
+    onClickBackButton: () -> Unit
+) {
     TopAppBarImpl(
         title = R.string.screen_title,
         navigationIcon = {
             IconButton(
-                onClick = {},
+                onClick = onClickBackButton,
                 colors = IconButtonDefaults.iconButtonColors(
                     containerColor = MaterialTheme.colorScheme.secondary
                 )

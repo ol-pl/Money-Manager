@@ -6,6 +6,8 @@ import com.olpl.core_presentation.components.UiEventsHandler
 import com.olpl.core_presentation.providers.LocalCurrentNavigator
 import com.olpl.core_presentation.providers.util.currentNotNull
 import com.olpl.core_presentation.util.Qualifiers
+import com.olpl.core_presentation.viewmodel.appmodel.AppViewModel
+import com.olpl.core_presentation.viewmodel.appmodel.events.AppEvents
 import com.olpl.settings_presentation.navigation.util.SettingsDestinations
 import com.olpl.settings_presentation.navigation.util.SettingsNavigator
 import com.olpl.settings_presentation.viewmodel.events.SettingsUiEvents
@@ -22,6 +24,9 @@ internal fun SettingsScreenUiEventHandler() {
         }
     )
     val settingsViewModel = koinViewModel<SettingsViewModel>(
+        viewModelStoreOwner = viewModelStoreOwner
+    )
+    val appViewModel = koinViewModel<AppViewModel>(
         viewModelStoreOwner = viewModelStoreOwner
     )
     val currentNavHostController = LocalCurrentNavigator.currentNotNull()
@@ -44,6 +49,8 @@ internal fun SettingsScreenUiEventHandler() {
                 route = SettingsDestinations.FontFamilyVariantDialog,
                 popUpToCurrentRoute = false
             )
+
+            SettingsUiEvents.OpenHomeScreen -> appViewModel.onEvent(AppEvents.OpenHome)
         }
     }
 }

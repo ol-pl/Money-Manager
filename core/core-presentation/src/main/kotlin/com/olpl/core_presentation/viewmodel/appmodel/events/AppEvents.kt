@@ -7,5 +7,6 @@ sealed interface AppEvents : Events {
     data object OnCloseApp : AppEvents
     data object HideBottomBar : AppEvents
     data object ShowBottomBar : AppEvents
+    data object OpenHome:AppEvents
     data class OnBottomBarItemClick(val appDestination: AppDestinations) : AppEvents
 }

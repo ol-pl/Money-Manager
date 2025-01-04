@@ -20,6 +20,7 @@ class AppViewModel : ViewModelExp<AppEvents, AppUiEvents>() {
             AppEvents.HideBottomBar -> _isBottomBarVisible.value = false
             AppEvents.ShowBottomBar -> _isBottomBarVisible.value = true
             is AppEvents.OnBottomBarItemClick -> onBottomBarItemClick(event.appDestination)
+            AppEvents.OpenHome -> sendUiEvent(AppUiEvents.NavigateToHomeGraph)
         }
     }
 
