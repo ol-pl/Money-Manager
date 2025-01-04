@@ -1,5 +1,6 @@
 package com.olpl.settings_presentation.ui
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,6 +10,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -65,7 +67,7 @@ internal fun SettingsScreen(paddingValues: PaddingValues) {
 
 private fun LazyListScope.colorTheme(settingsViewModel: SettingsViewModel) {
     item {
-        val colorPalette = settingsViewModel.colorPalette.collectAsStateWithLifecycle()
+        val colorPalette = settingsViewModel.colorPalette.collectAsState()
         SettingsCardImpl(
             title = R.string.colors,
             onClick = {
@@ -80,7 +82,8 @@ private fun LazyListScope.colorTheme(settingsViewModel: SettingsViewModel) {
 
 private fun LazyListScope.colorMode(settingsViewModel: SettingsViewModel) {
     item {
-        val colorMode = settingsViewModel.colorMode.collectAsStateWithLifecycle()
+        val colorMode = settingsViewModel.colorMode.collectAsState()
+        Log.wtf("hRae", "colorMode: ${colorMode.value}")
         SettingsCardImpl(
             title = R.string.color_mode,
             onClick = {
@@ -95,7 +98,7 @@ private fun LazyListScope.colorMode(settingsViewModel: SettingsViewModel) {
 
 private fun LazyListScope.font(settingsViewModel: SettingsViewModel) {
     item {
-        val font = settingsViewModel.fontFamilyVariants.collectAsStateWithLifecycle()
+        val font = settingsViewModel.fontFamilyVariants.collectAsState()
         SettingsCardImpl(
             title = R.string.font,
             onClick = {

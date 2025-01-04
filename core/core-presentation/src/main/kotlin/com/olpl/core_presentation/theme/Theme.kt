@@ -8,12 +8,6 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.olpl.core_presentation.theme.colors.DarkSchemeP1
-import com.olpl.core_presentation.theme.colors.DarkSchemeP2
-import com.olpl.core_presentation.theme.colors.DarkSchemeP3
-import com.olpl.core_presentation.theme.colors.LightSchemeP1
-import com.olpl.core_presentation.theme.colors.LightSchemeP2
-import com.olpl.core_presentation.theme.colors.LightSchemeP3
 import com.olpl.core_presentation.theme.util.ColorMode
 import com.olpl.core_presentation.theme.util.FontFamilyVariants
 import com.olpl.core_presentation.theme.util.PaletteVariants
@@ -46,19 +40,7 @@ fun MoneyManagerTheme(
             )
         }
 
-        paletteVariant.value == PaletteVariants.P1 -> {
-            if (darkTheme) DarkSchemeP1 else LightSchemeP1
-        }
-
-        paletteVariant.value == PaletteVariants.P2 -> {
-            if (darkTheme) DarkSchemeP2 else LightSchemeP2
-        }
-
-        paletteVariant.value == PaletteVariants.P3 -> {
-            if (darkTheme) DarkSchemeP3 else LightSchemeP3
-        }
-
-        else -> LightSchemeP1
+        else -> paletteVariant.value.getScheme(darkTheme)
     }
 
     MaterialTheme(

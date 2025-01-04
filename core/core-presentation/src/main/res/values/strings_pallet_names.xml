@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="palette_1">Sage &amp; Stone</string>
-    <string name="palette_2">Indigo Twilight</string>
-    <string name="palette_3">Black &amp; Gold Ore</string>
+    <string name="palette_1">Midnight Lagoon</string>
+    <string name="palette_2">Spiced Latte</string>
+    <string name="palette_3">Woodland Haven</string>
+    <string name="palette_4">Lavender Sonata</string>
+    <string name="palette_5">Moonlit Orchid</string>
+    <string name="palette_6">Spiced Ember</string>
 </resources>

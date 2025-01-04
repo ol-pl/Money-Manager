@@ -30,10 +30,19 @@ internal fun SettingsScreenUiEventHandler() {
     UiEventsHandler(viewModel = settingsViewModel) { uiEvent ->
         when (uiEvent) {
             SettingsUiEvents.GoBack -> navigator.navigateUp()
-            SettingsUiEvents.OpenColorModeDialog -> navigator.navigateTo(SettingsDestinations.ColorModeDialog)
-            SettingsUiEvents.OpenColorsDialog -> navigator.navigateTo(SettingsDestinations.ColorsDialog)
+            SettingsUiEvents.OpenColorModeDialog -> navigator.navigateTo(
+                route = SettingsDestinations.ColorModeDialog,
+                popUpToCurrentRoute = false
+            )
+
+            SettingsUiEvents.OpenColorsDialog -> navigator.navigateTo(
+                route = SettingsDestinations.ColorsDialog,
+                popUpToCurrentRoute = false
+            )
+
             SettingsUiEvents.OpenFontFamilyVariantDialog -> navigator.navigateTo(
-                SettingsDestinations.FontFamilyVariantDialog
+                route = SettingsDestinations.FontFamilyVariantDialog,
+                popUpToCurrentRoute = false
             )
         }
     }

@@ -31,9 +31,20 @@ fun AppUiEventsHandler() {
     UiEventsHandler(viewModel = appViewModel) { uiEvents ->
         when (uiEvents) {
             AppUiEvents.CloseApp -> (context as Activity).finish()
-            AppUiEvents.NavigateToAccountGraph -> navigator.navigateTo(navigateTo = AppDestinations.AccountGraph)
-            AppUiEvents.NavigateToDashboardGraph -> navigator.navigateTo(navigateTo = AppDestinations.DashboardGraph)
-            AppUiEvents.NavigateToHomeGraph -> navigator.navigateTo(navigateTo = AppDestinations.HomeGraph)
+            AppUiEvents.NavigateToAccountGraph -> navigator.navigateTo(
+                route = AppDestinations.AccountGraph,
+                popUpToCurrentRoute = true
+            )
+
+            AppUiEvents.NavigateToDashboardGraph -> navigator.navigateTo(
+                route = AppDestinations.DashboardGraph,
+                popUpToCurrentRoute = true
+            )
+
+            AppUiEvents.NavigateToHomeGraph -> navigator.navigateTo(
+                route = AppDestinations.HomeGraph,
+                popUpToCurrentRoute = true
+            )
         }
     }
 }

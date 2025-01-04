@@ -6,14 +6,18 @@ abstract class NavigatorDef(val navHostController: NavHostController) {
 
     /***
      * @param T to which we navigate
-     * Automatically popUp to current route
+     * @param popUpToCurrentRoute popUp to current route
      */
-    inline fun <reified T : Destination> navigateTo(navigateTo: T) {
-        val routeToPopUp = navHostController.currentDestination?.route
-        navigateTo(
-            route = navigateTo,
-            popUpToRoute = routeToPopUp,
-        )
+    inline fun <reified T : Destination> navigateTo(route: T, popUpToCurrentRoute: Boolean) {
+        if (popUpToCurrentRoute) {
+            val routeToPopUp = navHostController.currentDestination?.route
+            navigateTo(
+                route = route,
+                popUpToRoute = routeToPopUp,
+            )
+        } else {
+            navHostController.navigate(route)
+        }
     }
 
     inline fun <reified T : Destination> navigateTo(

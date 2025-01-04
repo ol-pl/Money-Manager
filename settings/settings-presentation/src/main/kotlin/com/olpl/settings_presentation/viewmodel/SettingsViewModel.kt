@@ -1,5 +1,6 @@
 package com.olpl.settings_presentation.viewmodel
 
+import android.util.Log
 import com.olpl.core_presentation.theme.util.ColorMode
 import com.olpl.core_presentation.theme.util.FontFamilyVariants
 import com.olpl.core_presentation.theme.util.PaletteVariants
