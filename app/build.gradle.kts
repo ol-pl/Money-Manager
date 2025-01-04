@@ -20,8 +20,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = rootProject.ext.get("isMinifyEnabled") as Boolean
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -50,13 +49,13 @@ dependencies {
     implementation(project(":home"))
 
     //Koin
-    implementation (libs.koin.androidx.compose)
-    implementation (libs.koin.android)
-    implementation (libs.koin.annotations)
-    ksp (libs.koin.ksp)
+    implementation(libs.koin.androidx.compose)
+    implementation(libs.koin.android)
+    implementation(libs.koin.annotations)
+    ksp(libs.koin.ksp)
 
     //Navigation
-    implementation (libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
 
     //Serialization
     implementation(libs.kotlinx.serialization.json)

@@ -5,10 +5,10 @@ plugins {
 
 android {
     namespace = "com.olpl.utils"
-    compileSdk = 35
+    compileSdk = rootProject.ext.get("compileSdk") as Int
 
     defaultConfig {
-        minSdk = 26
+        minSdk = rootProject.ext.get("minSdk") as Int
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -16,7 +16,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = rootProject.ext.get("isMinifyEnabled") as Boolean
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -24,11 +24,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = rootProject.ext.get("javaVersion") as JavaVersion
+        targetCompatibility = rootProject.ext.get("javaVersion") as JavaVersion
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = rootProject.ext.get("jvmTarget") as String
     }
 }
 

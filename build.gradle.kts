@@ -9,6 +9,8 @@ ext {
 
     set("javaVersion", JavaVersion.VERSION_11)
     set("jvmTarget", "11")
+
+    set("isMinifyEnabled", true)
 }
 
 plugins {
